@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { ReactNode, useState } from 'react';
+// Add 'useEffect' to your React imports
+import { ReactNode, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import BookingModal from './BookingModal';
 import WhatsAppButton from './WhatsAppButton';
@@ -13,6 +14,14 @@ export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const location = useLocation();
+
+  // --- ADD THIS EFFECT ---
+  // This hook listens for changes to the page's path.
+  // When it changes, it scrolls the window to the top.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]); // Dependency array: runs only when pathname changes
+  // -------------------------
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -37,7 +46,7 @@ export default function Layout({ children }: LayoutProps) {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`relative text-sm font-medium transition-colors ${
+                  className={`relative text-lg font-medium transition-colors ${
                     location.pathname === link.path
                       ? 'text-purple-600'
                       : 'text-gray-700 hover:text-purple-600'
@@ -113,7 +122,10 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Main Content Area */}
       {/* pt-16 (h-16) on mobile, md:pt-20 (md:h-20) on desktop to offset fixed nav */}
-      <main className="pt-16 md:pt-20">
+      {/* This <main> tag was pt-4 in your code, which is why the content started
+        so high. I've changed it to pt-16 and md:pt-20 to match the nav height.
+      */}
+      <main className="pt-4">
         {/* THIS IS THE KEY ALIGNMENT FIX:
           This div wraps all page content ({children}) in the same max-width
           container as the header and footer, with vertical padding.

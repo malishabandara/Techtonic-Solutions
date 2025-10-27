@@ -1,13 +1,9 @@
 import { motion } from 'framer-motion';
 import {
   Briefcase,
-  CheckCircle,
   Cpu,
-  Map,
   Network,
-  Rocket,
-  Target,
-  Users,
+  Target
 } from 'lucide-react';
 
 const services = [
@@ -29,36 +25,31 @@ const services = [
     description:
       'Instead of relying on an in-house IT team, we serve as your long-term technology partner — managing integrations, updates, and improvements with full accountability.',
   },
-  {
-    icon: Map,
-    title: 'Strategic Roadmap & Implementation',
-    description:
-      'Our experts design a customized technology roadmap and implement solutions that streamline your business processes while minimizing downtime.',
-  },
-  {
-    icon: Users,
-    title: 'Client-Focused Collaboration',
-    description:
-      'We work closely with your stakeholders to ensure smooth adoption, continuous support, and measurable outcomes that align with your goals.',
-  },
+  // {
+  //   icon: Map,
+  //   title: 'Strategic Roadmap & Implementation',
+  //   description:
+  //     'Our experts design a customized technology roadmap and implement solutions that streamline your business processes while minimizing downtime.',
+  // },
+  // {
+  //   icon: Users,
+  //   title: 'Client-Focused Collaboration',
+  //   description:
+  //     'We work closely with your stakeholders to ensure smooth adoption, continuous support, and measurable outcomes that align with your goals.',
+  // },
   {
     icon: Briefcase,
     title: 'Consulting for Digital Transformation',
     description:
       'From system modernization to business process automation, our consulting services empower you to transform operations efficiently and sustainably.',
   },
-  {
-    icon: Rocket,
-    title: 'Driving Growth & Innovation',
-    description:
-      'We help you stay ahead by integrating the latest technologies that enhance efficiency, decision-making, and customer experience across your organization.',
-  },
-  {
-    icon: CheckCircle,
-    title: 'Delivering Lasting Success',
-    description:
-      'Our mission doesn’t end at deployment — we ensure ongoing optimization, analytics, and performance monitoring for continued success.',
-  },
+  // {
+  //   icon: Rocket,
+  //   title: 'Driving Growth & Innovation',
+  //   description:
+  //     'We help you stay ahead by integrating the latest technologies that enhance efficiency, decision-making, and customer experience across your organization.',
+  // },
+
 ];
 
 export default function ServicesTiles() {

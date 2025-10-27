@@ -36,7 +36,7 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="text-5xl font-bold mb-4"
           >
-            About SYNERIS
+            About Techtonic Solutions
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export default function About() {
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                At <span className="font-semibold text-purple-700">SYNERIS</span>, we believe that digital success starts with understanding business fundamentals. 
+                At <span className="font-semibold text-purple-700">Techtonic Solutions</span>, we believe that digital success starts with understanding business fundamentals. 
                 Our mission is to empower companies by aligning technology with strategy — 
                 providing tailored IT solutions that enhance efficiency, agility, and customer experience.
               </p>

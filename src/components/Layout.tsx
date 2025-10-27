@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-// Add 'useEffect' to your React imports
 import { ReactNode, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import BookingModal from './BookingModal';
@@ -15,29 +14,23 @@ export default function Layout({ children }: LayoutProps) {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const location = useLocation();
 
-  // --- ADD THIS EFFECT ---
-  // This hook listens for changes to the page's path.
-  // When it changes, it scrolls the window to the top.
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location.pathname]); // Dependency array: runs only when pathname changes
-  // -------------------------
+  }, [location.pathname]);
 
   const navLinks = [
     { path: '/', label: 'Home' },
-    // { path: '/services', label: 'Services' },
     { path: '/about', label: 'About Us' },
     { path: '/contact', label: 'Contact' },
   ];
 
   return (
-    // Use a light gray background to make content sections pop
     <div className="min-h-screen bg-slate-50">
       <nav className="bg-white/80 backdrop-blur-md fixed w-full top-0 z-40 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold text-purple-600">SYNERIS</span>
+              <span className="text-2xl font-bold text-purple-600">Techtonic Solutions</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -53,7 +46,6 @@ export default function Layout({ children }: LayoutProps) {
                   }`}
                 >
                   {link.label}
-                  {/* Animated underline for active link */}
                   {location.pathname === link.path && (
                     <motion.div
                       className="absolute -bottom-1 left-0 right-0 h-0.5 bg-purple-600"
@@ -120,17 +112,12 @@ export default function Layout({ children }: LayoutProps) {
         </AnimatePresence>
       </nav>
 
-      {/* Main Content Area */}
-      {/* pt-16 (h-16) on mobile, md:pt-20 (md:h-20) on desktop to offset fixed nav */}
-      {/* This <main> tag was pt-4 in your code, which is why the content started
-        so high. I've changed it to pt-16 and md:pt-20 to match the nav height.
-      */}
-      <main className="pt-4">
-        {/* THIS IS THE KEY ALIGNMENT FIX:
-          This div wraps all page content ({children}) in the same max-width
-          container as the header and footer, with vertical padding.
-        */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      {/* --- CHANGED --- */}
+      {/* 1. Fixed padding-top to match nav height */}
+      <main className="pt-16 md:pt-20">
+        {/* --- CHANGED --- */}
+        {/* 2. Removed py-12/py-16 to let sections control their own padding */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {children}
         </div>
       </main>
@@ -141,7 +128,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Column 1: Brand */}
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">SYNERIS</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Techtonic Solutions</h3>
               <p className="text-slate-400 text-sm">
                 Empowering organizations through transformation readiness
                 assessments and strategic guidance.

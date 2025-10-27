@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AboutSection from '../components/AboutSection';
 import BookNowSection from '../components/BookNowSection';
 import BookingModal from '../components/BookingModal';
 import HeroCarousel from '../components/HeroCarousel';
@@ -11,6 +12,7 @@ export default function Home() {
     <div>
       <HeroCarousel onBookNow={() => setIsBookingModalOpen(true)} />
       <ServicesTiles />
+      <AboutSection />
       <BookNowSection onBookNow={() => setIsBookingModalOpen(true)} />
       <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </div>

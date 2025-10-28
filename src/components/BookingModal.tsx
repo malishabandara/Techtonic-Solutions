@@ -102,9 +102,9 @@ ${formData.message}
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors rounded-full p-1 hover:bg-gray-200 z-10"
+                className="absolute  top-4 right-4 text-gray-900  transition-colors rounded-full p-1 z-10 "
               >
-                <X size={24} />
+                <X  size={28} className='fixed -translate-x-6 bg-gray-300 transition-colors rounded-full lg:p-1 lg:text-lg p-1 ' />
               </button>
 
               {/* Header */}

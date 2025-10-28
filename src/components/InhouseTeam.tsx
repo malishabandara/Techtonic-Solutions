@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 export default function ServiceSection() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="pt-4 pb-10 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="lg:grid flex flex-col-reverse lg:grid-cols-2 gap-14 items-center">
           {/* Left Side: Image */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -27,7 +27,7 @@ export default function ServiceSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-extrabold text-purple-700 mb-6">
+            <h2 className="text-4xl font-extrabold text-purple-700 mb-7 ">
               Complete IT Support Without an In-House Team
             </h2>
             <p className="text-gray-700 text-lg mb-4">

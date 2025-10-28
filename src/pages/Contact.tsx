@@ -106,7 +106,7 @@ export default function Contact() {
                     {/* UPDATED: Contact info from previous version */}
                     <InfoItem icon={<MapPin size={24} />} title="Our Address" lines={["02, Yaya 06, Nawa Nagaraya", "Madhingiriya, Sri Lanka"]} />
                     <InfoItem icon={<Phone size={24} />} title="Phone Numbers" lines={["+94 703592888", "+94 703862650"]} />
-                    <InfoItem icon={<Mail size={24} />} title="Email" lines={["email@calicunatureceylon.com"]} />
+                    <InfoItem icon={<Mail size={24} />} title="Email" lines={["email@.com"]} />
                     <InfoItem icon={<Clock size={24} />} title="Working Hours" lines={["Mon - Sat: 8 AM - 6 PM", "Sunday: Closed"]} />
                   </div>
                 </div>

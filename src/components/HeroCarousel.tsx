@@ -54,7 +54,7 @@ export default function HeroCarousel({ onBookNow }: HeroCarouselProps) {
   };
 
   return (
-    <div className="relative h-[600px] overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}

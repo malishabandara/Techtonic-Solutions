@@ -83,19 +83,26 @@ ${formData.message}
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60"
           onClick={onClose}
         >
+          {/* THIS IS THE MAIN CHANGE:
+            - Combined the motion.div and the inner bg-white div.
+            - Set max-h to 90vh (from 70vh) to give it more room.
+            - Added overflow-y-auto to allow internal scrolling ONLY if needed.
+            - Added bg-white, rounded-2xl, and shadow-2xl directly to this element.
+          */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+            className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+            {/* This div is now just for padding */}
+            <div className="relative p-6 md:p-8">
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors rounded-full p-1 hover:bg-gray-200"
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors rounded-full p-1 hover:bg-gray-200 z-10"
               >
                 <X size={24} />
               </button>
@@ -109,7 +116,8 @@ ${formData.message}
               </p>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Changed space-y-5 to space-y-4 for a more compact form */}
+              <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Date and Time Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Date Input */}
@@ -120,7 +128,7 @@ ${formData.message}
                     <div className="relative">
                       <Calendar
                         size={18}
-                        className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                        className="absolute left-3.5 top-1/2 -translate-y-1/2 text-purple-400 pointer-events-none"
                       />
                       <input
                         type="date"
@@ -165,7 +173,7 @@ ${formData.message}
                   <div className="relative">
                     <User
                       size={18}
-                      className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
+                      className="absolute left-3.5 top-1/2 -translate-y-1/2 text-purple-400"
                     />
                     <input
                       type="text"
@@ -187,7 +195,7 @@ ${formData.message}
                   <div className="relative">
                     <Mail
                       size={18}
-                      className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
+                      className="absolute left-3.5 top-1/2 -translate-y-1/2 text-purple-400"
                     />
                     <input
                       type="email"
@@ -209,7 +217,7 @@ ${formData.message}
                   <div className="relative">
                     <Building2
                       size={18}
-                      className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
+                      className="absolute left-3.5 top-1/2 -translate-y-1/2 text-purple-400"
                     />
                     <input
                       type="text"
@@ -253,7 +261,7 @@ ${formData.message}
                     <div className="relative flex-1">
                       <Phone
                         size={18}
-                        className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
+                        className="absolute left-3.5 top-1/2 -translate-y-1/2 text-purple-400"
                       />
                       <input
                         type="tel"
@@ -276,12 +284,13 @@ ${formData.message}
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Message
                   </label>
+                  {/* Changed rows from 4 to 3 */}
                   <textarea
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
-                    rows={4}
+                    rows={3}
                     className={`${inputStyle} px-4`}
                     placeholder="Tell us about your transformation needs..."
                   />

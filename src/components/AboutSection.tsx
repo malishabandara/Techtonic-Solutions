@@ -2,11 +2,8 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    // 'bg-white' is the first section
-    // Removed h-[600px] and let padding control the height
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Removed h-full from grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side: Text */}
           <motion.div
@@ -14,20 +11,21 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            // Removed h-full and flex classes, letting content flow naturally
           >
             <h2 className="text-4xl font-extrabold text-purple-700 mb-6">
               Your Dedicated IT Partner
             </h2>
             <p className="text-gray-700 text-lg mb-4">
-              We are a dedicated IT partner committed to delivering innovative
-              solutions that drive your business forward. Our team specializes
-              in providing end-to-end IT services tailored to your unique needs.
+              We are your trusted IT consulting partner, committed to helping
+              businesses find the right technological solutions through our
+              network of expert partners. Our goal is to connect you with
+              reliable professionals who can bring your digital vision to life.
             </p>
             <p className="text-gray-700 text-lg">
-              From software development, system integration, cloud solutions,
-              and IT consultancy, we ensure your business has the tools and
-              strategies to succeed in the digital world.
+              From system integration, cloud solutions, and IT consultancy to
+              connecting you with skilled software development teams, we ensure
+              your business has the right tools and partnerships to succeed in
+              the digital world.
             </p>
           </motion.div>
 
@@ -37,7 +35,6 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            // Removed h-full, use aspect-ratio for a responsive image container
             className="rounded-3xl overflow-hidden shadow-lg aspect-w-16 aspect-h-9"
           >
             <img

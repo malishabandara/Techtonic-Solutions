@@ -25,12 +25,15 @@ export default function Layout({ children }: LayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 w-full overflow-x-hidden">
+      {/* Navigation Bar */}
       <nav className="bg-white/80 backdrop-blur-md fixed w-full top-0 z-40 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 md:h-20">
+        <div className="px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 md:h-20 max-w-[100%]">
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold text-purple-600">Techtonic Solutions</span>
+              <span className="text-2xl font-bold text-purple-600">
+                Techtonic Solutions
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -112,19 +115,15 @@ export default function Layout({ children }: LayoutProps) {
         </AnimatePresence>
       </nav>
 
-      {/* --- CHANGED --- */}
-      {/* 1. Fixed padding-top to match nav height */}
-      <main className="pt-16 md:pt-20">
-        {/* --- CHANGED --- */}
-        {/* 2. Removed py-12/py-16 to let sections control their own padding */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {children}
-        </div>
+      {/* Main Content */}
+      <main className="pt-16 md:pt-20 w-full bg-p">
+        {/* Removed max-width restriction for full-width layout */}
+        <div className="w-full">{children}</div>
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-300 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="bg-slate-900 text-slate-300 py-12 w-full">
+        <div className="w-full px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Column 1: Brand */}
             <div>
@@ -158,8 +157,7 @@ export default function Layout({ children }: LayoutProps) {
                 Get in Touch
               </h4>
               <p className="text-slate-400 text-sm mb-4">
-                Ready to transform your organization? Get in touch with us
-                today.
+                Ready to transform your organization? Get in touch with us today.
               </p>
               <button
                 onClick={() => setIsBookingModalOpen(true)}
@@ -169,6 +167,7 @@ export default function Layout({ children }: LayoutProps) {
               </button>
             </div>
           </div>
+
           {/* Copyright */}
           <div className="mt-10 pt-8 border-t border-slate-700 text-center text-slate-500 text-sm">
             <p>&copy; {new Date().getFullYear()} SYNERIS. All rights reserved.</p>
@@ -176,7 +175,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </footer>
 
-      {/* Floating utility components */}
+      {/* Floating Components */}
       <WhatsAppButton />
       <BookingModal
         isOpen={isBookingModalOpen}

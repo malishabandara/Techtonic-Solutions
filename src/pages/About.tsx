@@ -27,28 +27,32 @@ const values = [
 export default function About() {
   return (
     <div>
-      {/* --- Hero Section --- */}
-      <section className="bg-purple-600 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-5xl font-bold mb-4"
-          >
-            About Techtonic Solutions
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl max-w-3xl mx-auto"
-          >
-            Empowering organizations with modern IT solutions and strategic consulting to drive growth, innovation, and digital transformation.
-          </motion.p>
-        </div>
-      </section>
+     <section
+  className="relative py-20 bg-cover bg-center"
+  style={{ backgroundImage: `url('/team.jpg')` }}
+>
+  {/* Overlay for better readability */}
+  <div className="absolute inset-0 bg-black/50"></div>
 
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="text-5xl md:text-6xl font-bold mb-4"
+    >
+      About Techtonic Solutions
+    </motion.h1>
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+      className="text-xl max-w-3xl mx-auto"
+    >
+      Empowering organizations with modern IT solutions and strategic consulting to drive growth, innovation, and digital transformation.
+    </motion.p>
+  </div>
+</section>
       {/* --- Mission Section --- */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

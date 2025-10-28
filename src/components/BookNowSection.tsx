@@ -12,7 +12,7 @@ export default function BookNowSection({ onBookNow }: BookNowSectionProps) {
   return (
     // --- CHANGED ---
     // Changed background to bg-slate-100 to create contrast
-    <section className="py-24 bg-slate-100 mt-8">
+    <section className="py-24 bg-slate-100 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Card Container */}
         {/* --- CHANGED --- */}
@@ -111,7 +111,7 @@ export default function BookNowSection({ onBookNow }: BookNowSectionProps) {
               }}
               whileTap={{ scale: 0.97 }}
               onClick={onBookNow}
-              className={`${BG_PURPLE_COLOR} text-white px-12 py-5 rounded-full text-lg font-semibold hover:bg-purple-800 transition-all duration-300 inline-flex items-center justify-center space-x-3 shadow-lg`}
+              className={`${BG_PURPLE_COLOR} text-white lg:px-12 lg:py-5 px-6 py-2 rounded-full lg:text-lg text-sm font-semibold hover:bg-purple-800 transition-all duration-300 inline-flex items-center justify-center space-x-3 shadow-lg`}
             >
               <Calendar size={22} />
               <span>Book Your Free Consultation</span>

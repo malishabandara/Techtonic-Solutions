@@ -1,35 +1,34 @@
-import { Clock, Mail, MapPin, Phone, Send } from 'lucide-react'; // Added Send
-import React, { FormEvent, useState } from 'react'; // Added React and FormEvent
+import { Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
+import React, { FormEvent, useState } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '', // Use 'name' as in your new snippet
+    name: '',
     email: '',
     phone: '',
-    subject: '',
+    interest: '',
     message: '',
   });
 
-  const phoneNumber = "94XXXXXXXXX"; // Using number from old snippet, update if needed
+  const phoneNumber = "94774401250"; // 0774401250
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    // Using new, more detailed whatsapp message format
     const whatsappMessage = `New Contact Form Submission:\n\n` +
       `Name: ${formData.name}\n` +
       `Email: ${formData.email}\n` +
       `Phone: ${formData.phone}\n` +
-      `Subject: ${formData.subject}\n\n` +
+      `I Am Interested In: ${formData.interest}\n\n` +
       `Message:\n${formData.message}`;
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(url, '_blank');
 
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', interest: '', message: '' });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -52,7 +51,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               
               <div className="bg-black/20 backdrop-blur-lg p-6 rounded-2xl border border-white/10">
-                <h2 className="text-3xl font-bold text-white mb-4 font-serif">Send Us a Message</h2>
+                <h2 className="text-3xl font-bold text-white mb-4 font-serif">Let's Build Your Solution.</h2>
                 {/* CHANGED: Gradient color to purple */}
                 <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-300 mb-6"></div>
                 <p className="text-gray-300 mb-6 leading-relaxed">
@@ -71,20 +70,28 @@ export default function Contact() {
                     placeholder="Email Address *"
                   />
                   <input
-                    type="tel" name="phone" required value={formData.phone} onChange={handleChange}
+                    type="tel" name="phone" value={formData.phone} onChange={handleChange}
                     className={inputStyle}
-                    placeholder="Phone Number *"
+                    placeholder="Phone Number"
                   />
-                  <input
-                    type="text" name="subject" required value={formData.subject} onChange={handleChange}
+                  <select
+                    name="interest" required value={formData.interest} onChange={handleChange}
                     className={inputStyle}
-                    placeholder="Subject *"
-                  />
+                  >
+                    <option value="">I Am Interested In *</option>
+                    <option value="My Techtonic">My Techtonic</option>
+                    <option value="Techtonic Pro">Techtonic Pro</option>
+                    <option value="Training/Analytics">Training/Analytics</option>
+                    <option value="Other">Other</option>
+                  </select>
                   <textarea
                     name="message" required value={formData.message} onChange={handleChange} rows={4}
                     className={`${inputStyle} resize-none`}
                     placeholder="Message *"
                   />
+                  <p className="text-sm text-gray-400 italic">
+                    We respect your privacy. All inquiries are handled with the utmost confidentiality.
+                  </p>
                   <button
                     type="submit"
                     // CHANGED: Button gradient to purple
@@ -103,10 +110,10 @@ export default function Contact() {
                   <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-300 mb-6"></div>
                   
                   <div className="space-y-4">
-                    {/* UPDATED: Contact info from previous version */}
-                    <InfoItem icon={<MapPin size={24} />} title="Our Address" lines={["02, Yaya 06, Nawa Nagaraya", "Madhingiriya, Sri Lanka"]} />
-                    <InfoItem icon={<Phone size={24} />} title="Phone Numbers" lines={["+94 703592888", "+94 703862650"]} />
-                    <InfoItem icon={<Mail size={24} />} title="Email" lines={["email@.com"]} />
+                    {/* UPDATED: Contact info */}
+                    <InfoItem icon={<MapPin size={24} />} title="Our Address" lines={["195/A Thewatta Road", "Ragama"]} />
+                    <InfoItem icon={<Phone size={24} />} title="Phone" lines={["0774401250"]} />
+                    <InfoItem icon={<Mail size={24} />} title="Email" lines={["info@techtonicsolutions.com"]} />
                     <InfoItem icon={<Clock size={24} />} title="Working Hours" lines={["Mon - Sat: 8 AM - 6 PM", "Sunday: Closed"]} />
                   </div>
                 </div>

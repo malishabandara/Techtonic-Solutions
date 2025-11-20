@@ -5,6 +5,7 @@ import BookingModal from '../components/BookingModal';
 import HeroCarousel from '../components/HeroCarousel';
 import InhouseTeam from '../components/InhouseTeam';
 import ServicesTiles from '../components/ServicesTiles';
+import TechtonicAcademySection from '../components/TechtonicAcademySection';
 
 export default function Home() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -13,6 +14,7 @@ export default function Home() {
     <div className=''>
       <HeroCarousel onBookNow={() => setIsBookingModalOpen(true)} />
       <ServicesTiles />
+      <TechtonicAcademySection />
       <AboutSection />
       <InhouseTeam/>
       <BookNowSection onBookNow={() => setIsBookingModalOpen(true)} />

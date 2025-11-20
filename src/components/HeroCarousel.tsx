@@ -9,28 +9,10 @@ interface HeroCarouselProps {
 // Update paths to point to your /public folder assets
 const slides = [
   {
-    title: 'Transformation Readiness Assessment',
-    subtitle: 'Are You Ready for Digital Transformation?',
-    description: "Discover your organization's readiness to embrace change and unlock new opportunities with our comprehensive assessment.",
+    title: 'Elevate Your Tech. Simplify Your Life.',
+    subtitle: 'Your trusted IT Solutions Partner for ultimate efficiency, privacy, and strategic growth. Serving high-end individuals and ambitious SMEs.',
+    description: '',
     imageUrl: '/meeting.jpg', // Assumes /public/images/assessment-bg.jpg
-  },
-  {
-    title: 'Strategic Planning',
-    subtitle: 'Build Your Transformation Roadmap',
-    description: 'We help you create a clear, actionable plan that aligns with your business goals and drives sustainable growth.',
-    imageUrl: '/unity.jpg', // Assumes /public/images/planning-bg.jpg
-  },
-  {
-    title: 'Expert Guidance',
-    subtitle: 'Navigate Change with Confidence',
-    description: 'Leverage our expertise to identify challenges, assess technologies, and design solutions that work for your organization.',
-    imageUrl: '/puzzle.jpg', // Assumes /public/images/guidance-bg.jpg
-  },
-  {
-    title: 'Free Exploratory Call',
-    subtitle: 'Start Your Journey Today',
-    description: 'Schedule a complimentary consultation to discuss your transformation needs and explore how we can help.',
-    imageUrl: '/consult.jpg', // Assumes /public/images/consult-bg.jpg
   },
 ];
 
@@ -89,18 +71,20 @@ export default function HeroCarousel({ onBookNow }: HeroCarouselProps) {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className="text-2xl md:text-3xl mb-6"
+                className="text-2xl md:text-3xl mb-8 max-w-4xl mx-auto"
               >
                 {slides[currentSlide].subtitle}
               </motion.h2>
-              <motion.p
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="text-lg md:text-xl mb-8 max-w-3xl mx-auto"
-              >
-                {slides[currentSlide].description}
-              </motion.p>
+              {slides[currentSlide].description && (
+                <motion.p
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-lg md:text-xl mb-8 max-w-3xl mx-auto"
+                >
+                  {slides[currentSlide].description}
+                </motion.p>
+              )}
               <motion.button
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -110,7 +94,7 @@ export default function HeroCarousel({ onBookNow }: HeroCarouselProps) {
                 onClick={onBookNow}
                 className="bg-white text-purple-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
               >
-                Book Your Free Call
+                Start Your Free Consultation Today
               </motion.button>
             </div>
           </motion.div>

@@ -56,7 +56,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20 max-w-[100%]">
             <Link to="/" className="flex items-center">
-              <img src="/logo.png" alt="Techtonic Solutions Logo" className="h-12 w-auto object-cover" />
+              <img src="/logo.png" alt="Techtonic Solutions Logo" className="h-12 md:h-16 w-auto object-cover" />
             </Link>
 
             {/* Desktop Navigation */}

@@ -53,7 +53,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 ${formData.message}
     `.trim();
 
-    const phoneNumber = '94XXXXXXXXX'; // Replace with your actual WhatsApp number
+    const phoneNumber = '94766511168'; // Replace with your actual WhatsApp number
     const encodedMessage = encodeURIComponent(whatsappMessage);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
 

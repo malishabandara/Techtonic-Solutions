@@ -10,7 +10,7 @@ export default function Contact() {
     message: '',
   });
 
-  const phoneNumber = "94774401250"; // 0774401250
+  const phoneNumber = "94766511168"; // 0766511168
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();

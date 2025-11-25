@@ -32,7 +32,7 @@ export default function TechtonicPro() {
       description: 'Full engagement. Overseeing configuration, data migration, UAT, and go-live.',
     },
     {
-      phase: 'Phase 2: Implementation & Partnership',
+      phase: 'Phase 3: Implementation & Partnership',
       icon: FileText,
       title: 'Post-Implementation Support',
       description: 'System handover, detailed documentation, and optional Managed IT Services.',
@@ -49,6 +49,16 @@ export default function TechtonicPro() {
         badge: 'bg-purple-100 text-purple-900',
         line: 'bg-purple-200',
         iconBg: 'bg-purple-50'
+      };
+    }
+    if (phase.includes('Phase 3')) {
+      return {
+        dot: 'bg-emerald-600',
+        border: 'border-emerald-600',
+        text: 'text-emerald-600',
+        badge: 'bg-emerald-100 text-emerald-900',
+        line: 'bg-emerald-200',
+        iconBg: 'bg-emerald-50'
       };
     }
     return {
@@ -105,29 +115,31 @@ export default function TechtonicPro() {
           <div className="relative">
             
             {/* DESKTOP ONLY: Continuous Center Line with Gradient Transition */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-200 via-purple-200 to-blue-200 rounded-full z-0"></div>
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-200 via-blue-200 to-emerald-200 rounded-full z-0"></div>
 
             {timelineData.map((item, index) => {
               const Icon = item.icon;
               const isPhase1 = item.phase.includes('Phase 1');
+              const isPhase3 = item.phase.includes('Phase 3');
+              const isLeftAligned = isPhase1 || isPhase3; // Phase 1 and Phase 3 align left
               const styles = getPhaseStyles(item.phase);
 
               return (
                 <div 
                   key={index} 
                   className={`relative flex w-full mb-12 md:mb-24
-                    ${/* Mobile: Row (Phase 1) vs Row-Reverse (Phase 2) */ ''}
-                    ${isPhase1 ? 'flex-row' : 'flex-row-reverse md:flex-row'}
+                    ${/* Mobile: Row (Phase 1 & 3) vs Row-Reverse (Phase 2) */ ''}
+                    ${isLeftAligned ? 'flex-row' : 'flex-row-reverse md:flex-row'}
                   `}
                 >
                   
                   {/* --- DESKTOP SPACERS --- */}
-                  <div className={`hidden md:block w-1/2 flex-shrink-0 ${!isPhase1 && 'order-last'}`}></div>
+                  <div className={`hidden md:block w-1/2 flex-shrink-0 ${!isLeftAligned && 'order-last'}`}></div>
 
                   {/* --- MOBILE LINE SEGMENTS (Colored per phase) --- */}
                   <div className={`absolute top-0 bottom-0 w-1 md:hidden z-0
                     ${styles.line}
-                    ${isPhase1 ? 'left-8' : 'right-8'}
+                    ${isLeftAligned ? 'left-8' : 'right-8'}
                     ${index === timelineData.length - 1 ? 'h-1/2' : 'h-full'} 
                   `}></div>
 
@@ -136,7 +148,7 @@ export default function TechtonicPro() {
                     ${styles.dot}
                     
                     ${/* Mobile Positioning */ ''}
-                    ${isPhase1 ? 'left-8 -translate-x-1/2' : 'right-8 translate-x-1/2'}
+                    ${isLeftAligned ? 'left-8 -translate-x-1/2' : 'right-8 translate-x-1/2'}
                     
                     ${/* Desktop Positioning */ ''}
                     md:left-1/2 md:right-auto md:-translate-x-1/2
@@ -146,35 +158,35 @@ export default function TechtonicPro() {
 
                   {/* --- CONTENT CARD --- */}
                   <motion.div 
-                    initial={{ opacity: 0, x: isPhase1 ? 50 : -50 }}
+                    initial={{ opacity: 0, x: isLeftAligned ? 50 : -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className={`w-full z-10 relative
                       ${/* Mobile Padding & Text Align */ ''}
-                      ${isPhase1 ? 'pl-20 text-left' : 'pr-20 text-right md:text-left'}
+                      ${isLeftAligned ? 'pl-20 text-left' : 'pr-20 text-right md:text-left'}
                       
                       ${/* Desktop Padding & Width */ ''}
                       md:w-1/2 
-                      ${isPhase1 ? 'md:pl-24 md:pr-0' : 'md:pr-24 md:pl-0'}
+                      ${isLeftAligned ? 'md:pl-24 md:pr-0' : 'md:pr-24 md:pl-0'}
                     `}
                   >
                     <div className={`bg-white p-6 md:p-8 rounded-xl shadow-lg border-t-4 hover:shadow-2xl transition-all duration-300
                        ${styles.border}
-                       ${isPhase1 ? 'md:rounded-tl-none' : 'md:rounded-tr-none'}
+                       ${isLeftAligned ? 'md:rounded-tl-none' : 'md:rounded-tr-none'}
                     `}>
                       
                       {/* Phase Label */}
                       <div className={`inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider uppercase rounded-full
                         ${styles.badge}
-                        ${!isPhase1 && 'ml-auto md:ml-0'}
+                        ${!isLeftAligned && 'ml-auto md:ml-0'}
                       `}>
                         {item.phase}
                       </div>
 
                       {/* Title & Icon Wrapper */}
                       <div className={`flex items-center gap-4 mb-3 
-                        ${!isPhase1 ? 'flex-row-reverse md:flex-row justify-end md:justify-start' : ''}
+                        ${!isLeftAligned ? 'flex-row-reverse md:flex-row justify-end md:justify-start' : ''}
                       `}>
                          <div className={`p-2 rounded-lg hidden md:block ${styles.iconBg}`}>
                             <Icon className={styles.text} size={24} />

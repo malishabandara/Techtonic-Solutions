@@ -6,7 +6,7 @@ const services = [
   {
     id: 'personal',
     icon: User,
-    title: 'My Techtonic',
+    title: 'My TECHTONIC',
     headline: 'Your Personal, Private IT Department.',
     description:
       'Confidential tech management, device guidance, and one-on-one training designed around your personal and professional privacy.',
@@ -24,7 +24,7 @@ const services = [
   {
     id: 'business',
     icon: Building2,
-    title: 'Techtonic Pro',
+    title: 'TECHTONIC PRO',
     headline: 'Strategic IT Roadmaps for Business Efficiency.',
     description:
       'Comprehensive system study, solution roadmaps, and end-to-end implementation of best-in-class systems.',

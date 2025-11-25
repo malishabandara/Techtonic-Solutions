@@ -114,7 +114,7 @@ export default function Contact() {
                     <InfoItem icon={<MapPin size={24} />} title="Our Address" lines={["195/A Thewatta Road", "Ragama"]} />
                     <InfoItem icon={<Phone size={24} />} title="Phone" lines={["0774401250"]} />
                     <InfoItem icon={<Mail size={24} />} title="Email" lines={["info@techtonicsolutions.com"]} />
-                    <InfoItem icon={<Clock size={24} />} title="Working Hours" lines={["Mon - Sat: 8 AM - 6 PM", "Sunday: Closed"]} />
+                    <InfoItem icon={<Clock size={24} />} title="Working Hours" lines={["Mon - Fri: 8 AM - 6 PM", "Saturday & Sunday: Closed"]} />
                   </div>
                 </div>
               </div>

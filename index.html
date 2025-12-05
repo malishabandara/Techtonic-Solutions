@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/public/Logo2.png" />
+    <link rel="icon" type="image/png" href="/Logo2.png" />
+    <link rel="apple-touch-icon" href="/Logo2.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
@@ -17,8 +18,10 @@
     />
     <meta
       name="keywords"
-      content="IT consulting, technology solutions, IT support, business IT services, IT training, Techtonic Solutions, My Techtonic, Techtonic Pro, Techtonic Academy, Sri Lanka IT services"
+      content="Techtonic Solutions, techtonic solutions, IT consulting, technology solutions, IT support, business IT services, IT training, My Techtonic, Techtonic Pro, Techtonic Academy, Sri Lanka IT services, IT consulting Sri Lanka"
     />
+    <meta name="brand" content="Techtonic Solutions" />
+    <meta name="application-name" content="Techtonic Solutions" />
     <meta name="author" content="Techtonic Solutions" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
@@ -43,8 +46,11 @@
     />
     <meta
       property="og:image"
-      content="https://www.techtonicglobalsolutions.com/public/Logo2.png"
+      content="https://www.techtonicglobalsolutions.com/Logo2.png"
     />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Techtonic Solutions Logo" />
     <meta property="og:site_name" content="Techtonic Solutions" />
     <meta property="og:locale" content="en_US" />
 
@@ -64,8 +70,9 @@
     />
     <meta
       name="twitter:image"
-      content="https://www.techtonicglobalsolutions.com/public/Logo2.png"
+      content="https://www.techtonicglobalsolutions.com/Logo2.png"
     />
+    <meta name="twitter:image:alt" content="Techtonic Solutions Logo" />
 
     <!-- Additional SEO -->
     <meta name="theme-color" content="#9333ea" />
@@ -80,22 +87,61 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Techtonic Solutions",
+        "alternateName": "Techtonic Global Solutions",
         "url": "https://www.techtonicglobalsolutions.com",
-        "logo": "https://www.techtonicglobalsolutions.com/Logo2.png",
-        "description": "IT consulting and technology services provider offering personal IT support, business solutions, and training services.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.techtonicglobalsolutions.com/Logo2.png",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://www.techtonicglobalsolutions.com/Logo2.png",
+        "description": "Techtonic Solutions - Leading IT consulting and technology services provider in Sri Lanka. Offering comprehensive IT solutions including My Techtonic (personal IT support), Techtonic Pro (business solutions), and Techtonic Academy (training & analytics).",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "195/A Thewatta Road",
           "addressLocality": "Ragama",
           "addressCountry": "LK"
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+94-77-440-1250",
-          "contactType": "Customer Service",
-          "email": "info@techtonicglobalsolutions.com"
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+94-77-440-1250",
+            "contactType": "Customer Service",
+            "email": "info@techtonicglobalsolutions.com",
+            "availableLanguage": ["English"]
+          }
+        ],
+        "sameAs": [],
+        "foundingDate": "2024",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Sri Lanka"
         },
-        "sameAs": []
+        "knowsAbout": [
+          "IT Consulting",
+          "Technology Solutions",
+          "IT Support",
+          "Business IT Services",
+          "IT Training",
+          "Data Analytics"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Techtonic Solutions",
+        "url": "https://www.techtonicglobalsolutions.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.techtonicglobalsolutions.com/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       }
     </script>
   </head>

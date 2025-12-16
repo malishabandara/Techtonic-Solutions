@@ -304,7 +304,7 @@ export default function Layout({ children }: LayoutProps) {
 
           {/* Copyright */}
           <div className="mt-10 pt-8 border-t border-slate-700 text-center text-slate-500 text-sm">
-            <p>&copy; {new Date().getFullYear()} Global Solutions. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} NextGen Web Works. All rights reserved.</p>
           </div>
         </div>
       </footer>
